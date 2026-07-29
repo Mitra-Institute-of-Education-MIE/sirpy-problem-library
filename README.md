@@ -75,12 +75,12 @@ Each problem folder contains a walk-through `README.md` showing the problem, the
 
 ## 📚 Problem Catalog
 
-| # | Domain | Equation Type | Problem | Status | Link |
+| # | Domain | Equation Type | Problem | Status ||
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | Nonlinear ODE | Boundary value, movable pole | y′′ = 2y³ on [0, 9] — solved to machine precision; pole at x = 10 located unprompted | ✅ Verified | [View](./problems/differential-equations/movable-pole-bvp/) |
-| 2 | Nonlinear ODE | Boundary value, shifted singularity | y′′ = 2y³ on [0, 11] — the singularity moves with the boundary data | ✅ Verified | [View](./problems/differential-equations/shifted-singularity-bvp/) |
-| 3 | Quantum Mechanics | Nonlocal (integro-differential) | 1D Steady-State Hartree Equation | ✅ Verified | [View](./problems/differential-equations/non-local-hartree/) |
-| 4 | Quantum Mechanics | Local nonlinear cubic | Gross–Pitaevskii Equation | ⏳ In Progress | [View](./problems/differential-equations/gross-pitaevskii/) |
+| 1 | Nonlinear ODE | Boundary value, movable pole | y′′ = 2y³ on [0, 9] — solved to machine precision; pole at x = 10 located unprompted | ✅ Verified ||
+| 2 | Nonlinear ODE | Boundary value, shifted singularity | y′′ = 2y³ on [0, 11] — the singularity moves with the boundary data | ✅ Verified ||
+| 3 | Quantum Mechanics | Nonlocal (integro-differential) | 1D Steady-State Hartree Equation | ✅ Verified ||
+| 4 | Quantum Mechanics | Local nonlinear cubic | Gross–Pitaevskii Equation | ⏳ In Progress ||
 
 *(Numbering matches the SIRPY problem series posted publicly.)*
 
