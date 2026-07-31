@@ -80,7 +80,7 @@ Each problem folder contains a walk-through `README.md` showing the problem, the
 | 1 | Nonlinear ODE | Boundary value, movable pole | y′′ = 2y³ on [0, 9] — solved to machine precision; pole at x = 10 located unprompted | ✅ Verified ||
 | 2 | Nonlinear ODE | Boundary value, shifted singularity | y′′ = 2y³ on [0, 11] — the singularity moves with the boundary data | ✅ Verified ||
 | 3 | Quantum Mechanics | Nonlocal (integro-differential) | 1D Steady-State Hartree Equation | ✅ Verified ||
-| 4 | Quantum Mechanics | Local nonlinear cubic | Gross–Pitaevskii Equation | ⏳ In Progress ||
+| 4 | Quantum Mechanics | Local nonlinear cubic | Gross–Pitaevskii Equation | ✅ Verified ||
 
 *(Numbering matches the SIRPY problem series posted publicly.)*
 
