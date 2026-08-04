@@ -81,7 +81,8 @@ Each problem folder contains a walk-through `README.md` showing the problem, the
 | 2 | Nonlinear ODE | Boundary value, shifted singularity | y′′ = 2y³ on [0, 11] — the singularity moves with the boundary data | ✅ Verified ||
 | 3 | Quantum Mechanics | Nonlocal (integro-differential) | 1D Steady-State Hartree Equation | ✅ Verified ||
 | 4 | Quantum Mechanics | Local nonlinear cubic | Gross–Pitaevskii Equation | ✅ Verified ||
-
+| 5 | Integral Equations | Nonlinear Volterra, second kind | y(t) = t(1−t) + ∫₀ᵗ (t−s) y(s)² ds on [0, 1] — no ICs given; the equation supplies its own initial data | ✅ Verified ||
+| 6 | Integral Equations | Nonlinear Volterra, second kind, embedded free parameter | y(t) = g·t − t² + ∫₀ᵗ (t−s) y(s)² ds, y(1) = 0 — g recovered via terminal condition, cross-checked against y′(0) | ✅ Verified ||
 *(Numbering matches the SIRPY problem series posted publicly.)*
 
 ---
