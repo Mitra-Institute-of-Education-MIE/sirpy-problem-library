@@ -26,7 +26,7 @@ The single unknown constant $b$ absorbs the hole geometry and discharge coeffici
 
 **Estimate and interval.**
 
-$$b = 0.002581, \qquad  \text{ 95% interval } [0.002562, 0.002600]$$
+$b = 0.002581$, 95% interval $[0.002562, 0.002600]$
 
 SSE $= 0.0104$. The data pins the constant to about ±0.7%.
 
