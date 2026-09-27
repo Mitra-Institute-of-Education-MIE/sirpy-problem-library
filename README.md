@@ -17,6 +17,8 @@ Two commitments sit under every result:
 - **Verification by substitution.** Because the answer is a function, SIRPY substitutes it back into the original equation and measures the defect. You are not asked to trust the result; you are shown the residual.
 - **Honest reliability.** SIRPY reports an estimated reliable range for every solution and never claims an accuracy it has not measured. When a problem reaches the limits of the implemented theory, it says so explicitly rather than returning a silently degraded answer.
 
+- **Certified parameter estimation.** For models fitted to noisy data, SIRPY reports the estimate, its confidence interval, and the numerical residual — so you can see whether solver error is small enough to change the answer. See the Torricelli study.
+
 ---
 
 ## What SIRPY solves
@@ -77,29 +79,28 @@ Each problem folder contains a walk-through `README.md` showing the problem, the
 
 | # | Domain | Equation Type | Problem | Status ||
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | Nonlinear ODE | Boundary value, movable pole | y′′ = 2y³ on [0, 9] — solved to machine precision; pole at x = 10 located unprompted | ✅ Verified ||
-| 2 | Nonlinear ODE | Boundary value, shifted singularity | y′′ = 2y³ on [0, 11] — the singularity moves with the boundary data | ✅ Verified ||
-| 3 | Quantum Mechanics | Nonlocal (integro-differential) | 1D Steady-State Hartree Equation | ✅ Verified ||
-| 4 | Quantum Mechanics | Local nonlinear cubic | Gross–Pitaevskii Equation | ✅ Verified ||
-| 5 | Integral Equations | Nonlinear Volterra, second kind | y(t) = t(1−t) + ∫₀ᵗ (t−s) y(s)² ds on [0, 1] — no ICs given; the equation supplies its own initial data | ✅ Verified ||
-| 5b | Integral Equations | Nonlinear Volterra, second kind, embedded free parameter | y(t) = g·t − t² + ∫₀ᵗ (t−s) y(s)² ds, y(1) = 0 — g recovered via terminal condition, cross-checked against y′(0) | ✅ Verified ||
-| 6 | Troesch's Problem | A classical test case originating in plasma physics |y'' = mu* sinh(mu*y), y(0) = 0, y(1) =1 | ✅ Verified ||
-| 7 | Stiff Problem |  A classic stiff linear initial-value problem |y'' + (101)*y' + 100*y = 0, y(0) = 1, y'(0) =-1 | ✅ Verified ||
-| 8 | Stiff Problem |  A classic stiff linear initial-value problem |y'' + (101)*y' + 100*y = 0, y(0) = 1, y'(0) =-1 | ✅ Verified ||
-| 9 | Thomas-Fermi (IVP and BVP) |  It appears naturally as one of the free coefficients of the Frobenius expansion. |y''  = y**(3/2)/sqrt(x) | ✅ Verified ||
-| 10 | The Blasius |  Solving a
-Famous Infinite-Domain Problem |2*f''' + f * f'' =0, f(0) =0, f'(0) =0, f'(infinity)=1 | ✅ Verified ||
-| 11 | Falkner-Skan |  Generalized Blasius |f'''  = - f * f'' -beta*(1- f'**2), f(0) =0, f'(0) =0, f'(infinity)=1 | ✅ Verified ||
-| 12 | Eigenvalue Problem |  A classical Sturm–Liouville eigenvalue problem |y'' = -lambda*y, y(0) =0, y(1) =0 | ✅ Verified ||
-| 13 | Integro-Differential Equation |  A hard integral, sixteen times over |y′ + y = int_0^x  sin(100(x − t)) * y(t), y(0) = 1 | ✅ Verified ||
-| 14 | Certificate of Nonexistence |  Can you prove there is no answer at all? |y'' + 3.52 eʸ = 0, y(0) = y(1) = 0 | ✅ Verified ||
-| 15 | The Fourth-Order Bratu Problem |  A beam under a load that grows with deflection |y'''' = λeʸ,  y(0) = y(1) = 0  | ✅ Verified ||
-| 16 | HIRES  |  Eight nonlinear equations, rate constants spanning five orders of magnitude| Eight Coupled Equations from Photochemistry  | ✅ Verified ||
-| 17 | Van der Pol Across Three Regimes |  Relaxation Cycles,Verified, and the Cost of Stiffness |y″ = μ(1−y²)y′ − y at μ = 10, 100, 1000  | ✅ Verified ||
-| 18 |  Lane–Emden  |  Starting Where the Equation Breaks |y″ = −2y′/x − y⁵, y(0) = 1, y′(0) = 0 | ✅ Verified ||
+| 1 | [Nonlinear ODE I](https://github.com/sirpy26/SIRPY/blob/main/Problems/nonlinear_ode_1.pdf) | Boundary value, movable pole | y′′ = 2y³ on [0, 9] — solved to machine precision; pole at x = 10 located unprompted | ✅ Verified ||
+| 2 | [Nonlinear ODE II](https://github.com/sirpy26/SIRPY/blob/main/Problems/nonlinear_ode_2.pdf)  | Boundary value, shifted singularity | y′′ = 2y³ on [0, 11] — the singularity moves with the boundary data | ✅ Verified ||
+| 3 | [Quantum Mechanics I](https://github.com/sirpy26/SIRPY/blob/main/Problems/quantun_mechanics_1.pdf) | Nonlocal (integro-differential) | 1D Steady-State Hartree Equation | ✅ Verified ||
+| 4 | [Quantum Mechanics II](https://github.com/sirpy26/SIRPY/blob/main/Problems/quantun_mechanics_2.pdf) | Local nonlinear cubic | Gross–Pitaevskii Equation | ✅ Verified ||
+| 5a | [Integral Equations](https://github.com/sirpy26/SIRPY/blob/main/Problems/linkedin_5a.pdf)  | Nonlinear Volterra, second kind | y(t) = t(1−t) + ∫₀ᵗ (t−s) y(s)² ds on [0, 1] — no ICs given; the equation supplies its own initial data | ✅ Verified ||
+| 5b | [Integral Equations](https://github.com/sirpy26/SIRPY/blob/main/Problems/linkedin_5b.pdf)| Nonlinear Volterra, second kind, embedded free parameter | y(t) = g·t − t² + ∫₀ᵗ (t−s) y(s)² ds, y(1) = 0 — g recovered via terminal condition, cross-checked against y′(0) | ✅ Verified ||
+| 6 | [Troesch's Problem](https://github.com/sirpy26/SIRPY/blob/main/Problems/linkedin_6.pdf) | A classical test case originating in plasma physics |y'' = mu* sinh(mu*y), y(0) = 0, y(1) =1 | ✅ Verified ||
+| 7 | [Stiff Problem I](https://github.com/sirpy26/SIRPY/blob/main/Problems/linkedin_7.pdf) |  A classic stiff linear initial-value problem |y'' + (101)*y' + 100*y = 0, y(0) = 1, y'(0) =-1 | ✅ Verified ||
+| 8 | [Stiff Problem II](https://github.com/sirpy26/SIRPY/blob/main/Problems/linkedin_8.pdf) |  A classic stiff linear initial-value problem |y'' + (101)*y' + 100*y = 0, y(0) = 1, y'(0) =-1 | ✅ Verified ||
+| 9 | [Thomas-Fermi (IVP and BVP)](https://github.com/sirpy26/SIRPY/blob/main/Problems/linkedin_9.pdf) |  It appears naturally as one of the free coefficients of the Frobenius expansion |y''  = y**(3/2)/sqrt(x) | ✅ Verified ||
+| 10 | [The Blasius](https://github.com/sirpy26/SIRPY/blob/main/Problems/linkedin_10.pdf) |  Solving a Famous Infinite-Domain Problem |2*f''' + f * f'' =0, f(0) =0, f'(0) =0, f'(infinity)=1 | ✅ Verified ||
+| 11 | [Falkner-Skan](https://github.com/sirpy26/SIRPY/blob/main/Problems/linkedin_11.pdf) |  Generalized Blasius |f'''  = - f * f'' -beta*(1- f'**2), f(0) =0, f'(0) =0, f'(infinity)=1 | ✅ Verified ||
+| 12 | [Eigenvalue Problem](https://github.com/sirpy26/SIRPY/blob/main/Problems/linkedin_12.pdf) |  A classical Sturm–Liouville eigenvalue problem |y'' = -lambda*y, y(0) =0, y(1) =0 | ✅ Verified ||
+| 13 | [Integro-Differential Equation](https://github.com/sirpy26/SIRPY/blob/main/Problems/linkedin_13.pdf) |  A hard integral, sixteen times over |y′ + y = int_0^x  sin(100(x − t)) * y(t), y(0) = 1 | ✅ Verified ||
+| 14 | [Certificate of Nonexistence](https://github.com/sirpy26/SIRPY/blob/main/Problems/linkedin_14.pdf) |  Can you prove there is no answer at all? |y'' + 3.52 eʸ = 0, y(0) = y(1) = 0 | ✅ Verified ||
+| 15 | [The Fourth-Order Bratu Problem](https://github.com/sirpy26/SIRPY/blob/main/Problems/linkedin_15.pdf) |  A beam under a load that grows with deflection |y'''' = λeʸ,  y(0) = y(1) = 0  | ✅ Verified ||
+| 16 | [HIRES](https://github.com/sirpy26/SIRPY/blob/main/Problems/linkedin_16.pdf)  |  Eight nonlinear equations, rate constants spanning five orders of magnitude| Eight Coupled Equations from Photochemistry  | ✅ Verified ||
+| 17 | [Van der Pol Across Three Regimes](https://github.com/sirpy26/SIRPY/blob/main/Problems/linkedin_17.pdf) |  Relaxation Cycles,Verified, and the Cost of Stiffness |y″ = μ(1−y²)y′ − y at μ = 10, 100, 1000  | ✅ Verified ||
+| 18 |  [Lane–Emden](https://github.com/sirpy26/SIRPY/blob/main/Problems/linkedin_18.pdf)  |  Starting Where the Equation Breaks |y″ = −2y′/x − y⁵, y(0) = 1, y′(0) = 0 | ✅ Verified ||
+| 19 | [Parameter estimation](https://github.com/sirpy26/SIRPY/tree/main/Problems/torricelli) | First-order ODE, non-unique at h=0 | Torricelli draining tank (SIMIODE 1-015) — b = 0.002581 [0.002562, 0.002600]; verified on [0,100] to 4.31e-12 | ✅ Verified |
 
 
----
 *(Numbering matches the SIRPY problem series posted publicly.)*
 
 
